@@ -53,6 +53,12 @@ def deleteIndex(graph_db, nodeOrRelationship, nameOfIndex):
     
     return result   
        
-
+def importDatabase():
+    file = "../create_db"
+    dbFile=open(file,'r')
+    i = 0
+    for line in dbFile.readlines():
+        print line
+    print "Done"
 
 
