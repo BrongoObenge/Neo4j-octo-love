@@ -69,16 +69,11 @@ def importDatabase(graph_db):
         #print line
     print "Success!"
 
-'''
-    def countLines(file):
-    length = None
-    files = file
-    dbFile=open(files,'c')
-    length = len(dbFile.readlines())
-    return length
-'''
 
-
+def openQuerySession():
+    session = cypher.Session()
+    tx = session.create_transaction()
+    return tx
 
 
 
