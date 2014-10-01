@@ -1,17 +1,18 @@
+#!/usr/bin/python
 '''
 Connection Neo4j
 
 
 '''
 from py2neo import *
-from Config import *
+from ConfigDb import *
+from Parse import *
 
-class Connection:
-    config = ConfigDb()
-    db = connectDbConfig()
+class Connection: pass
     
-    
-    
+ConfigDb();
+db = connectDb()
+print "Database is connected : " + parseBoolean(ConfigDb.isConnect)   
 
 
 
