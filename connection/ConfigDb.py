@@ -41,7 +41,9 @@ def createDatabase():
     pass
 
 def deleteWholeDatabase(graph_db):
+       print "Preparing to delete database"
        graph_db.clear()
+       print "Success!"
        
 def deleteIndex(graph_db, nodeOrRelationship, nameOfIndex):
     result = False
@@ -51,18 +53,21 @@ def deleteIndex(graph_db, nodeOrRelationship, nameOfIndex):
     return result   
        
 def importDatabase(graph_db):
-    
     print "Opening file . . ."
-    file = "../create_db"
-    dbFile=open(file,'r')
-    print "File " + dbFile.name + " opened! " + "\nin the mode : " + dbFile.mode
- 
+    try:
+        file = "../create_db"
+        dbFile=open(file,'r')
+    except:
+        print "Error while loading file"
+        return "Error!"
+    
+    print "File " + dbFile.name + " opened! " + "\nin the mode : " + dbFile.mode 
     print "Writing database"
        
     for line in dbFile.readlines():
         graph_db.create(eval(line))
         #print line
-    print "Done!"
+    print "Success!"
 
 '''
     def countLines(file):
