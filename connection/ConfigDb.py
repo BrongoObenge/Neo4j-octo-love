@@ -55,29 +55,23 @@ def importDatabase(graph_db):
     print "Opening file . . ."
     file = "../create_db"
     dbFile=open(file,'r')
-    print "File opened!"
+    print "File " + dbFile.name + " opened! " + "\nin the mode : " + dbFile.mode
+ 
     print "Writing database"
-    length = countLines(dbFile)
-    i = 1
-    
-    
-
-    
-    for line in dbFile.readlines():
        
-        print str(i) + "/" + str(length)
-        
-        graph_db.create(node({'Id':'1','Description':'Computer' }))
-        i+= 1
+    for line in dbFile.readlines():
+        graph_db.create(eval(line))
+        #print line
     print "Done!"
 
-def countLines(file):
+'''
+    def countLines(file):
     length = None
     files = file
     dbFile=open(files,'c')
     length = len(dbFile.readlines())
     return length
-
+'''
 
 
 
