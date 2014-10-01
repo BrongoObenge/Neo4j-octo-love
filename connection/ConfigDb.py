@@ -29,11 +29,8 @@ def __init__(self):
 
 def connectDb():
     graph_db = neo4j.GraphDatabaseService(ConfigDb.url)
-   
-    
-    #####TEST
+   #####TEST
     #graph_db.
-    
     
     #######
     ConfigDb.isConnect = True
@@ -53,12 +50,42 @@ def deleteIndex(graph_db, nodeOrRelationship, nameOfIndex):
     
     return result   
        
-def importDatabase():
+def importDatabase(graph_db):
+    
+    print "Opening file . . ."
     file = "../create_db"
     dbFile=open(file,'r')
-    i = 0
+    print "File opened!"
+    print "Writing database"
+    length = countLines(dbFile)
+    i = 1
+    
+    
+
+    
     for line in dbFile.readlines():
-        print line
-    print "Done"
+       
+        print str(i) + "/" + str(length)
+        
+        graph_db.create(node({'Id':'1','Description':'Computer' }))
+        i+= 1
+    print "Done!"
+
+def countLines(file):
+    length = None
+    files = file
+    dbFile=open(files,'c')
+    length = len(dbFile.readlines())
+    return length
+
+
+
+
+
+
+
+
+
+
 
 

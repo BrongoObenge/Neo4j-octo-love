@@ -13,8 +13,10 @@ class Connection: pass
 ConfigDb();
 db = connectDb()
 print "Database is connected : " + parseBoolean(ConfigDb.isConnect)   
-importDatabase()
 
+
+importDatabase(db)
+#deleteWholeDatabase(db)
 
 
 

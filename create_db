@@ -1,6 +1,17 @@
-hallo
-1
-2
-3
-4
-5
+node({'Id':'1', 'Description':'Computer' })
+node(2:HARDWARE				{'Id':'2', 'Description':'Hardware' })
+node(3:PERIPHERALS 			{'Id':'3', 'Description':'Peripherals' })
+node(4:PROCESSOR				{'Id':'4, 'Description':'Processor' })
+node(5:GRAPHICS CARD			{'Id':'5', 'Description':'Graphics Card' })
+node(6:POWERSUPPLY UNIT 		{'Id':'6', 'Description':'Power Supply Unit' })
+node(7:MOTHERBOARD 			{'Id':'7', 'Description':'MotherBoard' })
+node(8:SOUND CARD 			{'Id':'8', 'Description':'Sound Card' })
+node(9:MEMORY 				{'Id':'9', 'Description':'Ram' })
+node(10:HARD DISK DRIVE		{'Id':'10', 'Description':'HDD' })
+node(11:OPTICAL DRIVE		{'Id':'11', 'Description':'Optical Drive' })
+node(12:CASE 				{'Id':'12', 'Description':'Case' })
+node(13:SOLID STATE DRIVE 	{'Id':'13', 'Description':'SSD' })
+node(14:SOCKET				{'Id':'14', 'Description':'Socket'})
+node(15:DDR TYPE				{'Id':'15', 'Description':'DDR Type'})
+node(16:CLOCK SPEED			{'Id':'16', 'Description':'Clock Speed' })
+node(17:MAX MEMORY			{'Id':'17', 'Description':'Maximum Memory' })
