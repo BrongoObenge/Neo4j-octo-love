@@ -52,7 +52,7 @@ def deleteIndex(graph_db, nodeOrRelationship, nameOfIndex):
     
     return result   
        
-def importDatabase(graph_db):
+def importDatabaseNodes(graph_db):
     print "Opening file . . ."
     try:
         file = "../create_db"

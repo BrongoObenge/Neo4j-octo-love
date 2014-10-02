@@ -15,8 +15,10 @@ db = connectDb()
 print "Database is connected : " + parseBoolean(ConfigDb.isConnect)   
 
 
-importDatabase(db)
+importDatabaseNodes(db)
 #deleteWholeDatabase(db)
+
+
 
 
 
