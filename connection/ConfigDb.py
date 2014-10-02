@@ -5,7 +5,7 @@ Created on 1 Oct 2014
 @author: j
 '''
 from ConfigParser import SafeConfigParser
-from py2neo import *
+from py2neo import neo4j
 
 class ConfigDb:
     'Configure database. Add Delete Modify'
@@ -74,12 +74,3 @@ def openQuerySession():
     session = cypher.Session()
     tx = session.create_transaction()
     return tx
-
-
-
-
-
-
-
-
-
