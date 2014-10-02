@@ -4,19 +4,18 @@ Connection Neo4j
 
 
 '''
-from py2neo import *
 from ConfigDb import *
-from Parse import *
+
 
 class Connection: pass
     
 ConfigDb();
 db = connectDb()
-print "Database is connected : " + parseBoolean(ConfigDb.isConnect)   
+print "Database is connected : " + str(ConfigDb.isConnect)
 
 
-importDatabaseNodes(db)
-#deleteWholeDatabase(db)
+#importDatabaseNodes(db)
+deleteWholeDatabase(db)
 
 
 
