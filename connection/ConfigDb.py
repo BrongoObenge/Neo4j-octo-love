@@ -6,7 +6,7 @@ Created on 1 Oct 2014
 '''
 from ConfigParser import SafeConfigParser
 from py2neo import *
-
+from py2neo import neo4j, cypher
 class ConfigDb:
     'Configure database. Add Delete Modify'
     url = None
@@ -36,7 +36,7 @@ def connectDb():
 
 def createDatabase(graph_db):
     importDatabaseNodes(graph_db)
-
+    importDatabaseRelations(graph_db)
 
 
 def deleteWholeDatabase(graph_db):
@@ -76,7 +76,7 @@ def importDatabaseRelations(graph_db):
         print "Error while loading file"
         return "Error!"
     for line in dbFile.readlines():
-        neo4j.CypherQuery(graph_db, eval(line))
+        neo4j.CypherQuery(graph_db, line).execute()
 
 def openQueryTransaction():
     session = cypher.Session(ConfigDb.url)
