@@ -7,9 +7,9 @@ db = connectDb()
 
 print "Database is connected : " + str(ConfigDb.isConnect)
 
-if  sys.argv[0] == "create":
+if  sys.argv[1] == "create":
     importDatabaseNodes(db)
-if  sys.argv[0] == "delete":
+if  sys.argv[1] == "delete":
     deleteWholeDatabase(db)
 
 

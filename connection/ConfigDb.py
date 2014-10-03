@@ -5,7 +5,7 @@ Created on 1 Oct 2014
 @author: j
 '''
 from ConfigParser import SafeConfigParser
-from py2neo import neo4j,cypher
+from py2neo import *
 
 class ConfigDb:
     'Configure database. Add Delete Modify'
@@ -31,12 +31,7 @@ def __init__(self):
 
 def connectDb():
     graph_db = neo4j.GraphDatabaseService(ConfigDb.url)
-   #####TEST
-    #graph_db.
-    
-    #######
     ConfigDb.isConnect = True
-    
     return graph_db
 
 def createDatabase(graph_db):
@@ -57,6 +52,7 @@ def deleteIndex(graph_db, nodeOrRelationship, nameOfIndex):
     return result   
        
 def importDatabaseNodes(graph_db):
+
     print "Opening file . . ."
     try:
         file = "create_db"
@@ -65,7 +61,7 @@ def importDatabaseNodes(graph_db):
         print "Error while loading file"
         return "Error!"
     
-    print "File " + dbFile.name + " opened! " + "\nin the mode : " + dbFile.mode 
+    print "File " + dbFile.name + " opened! " + "\nin the mode : " + dbFile.mode
     print "Creating Nodes..."
        
     for line in dbFile.readlines():
