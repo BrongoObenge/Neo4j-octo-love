@@ -20,7 +20,7 @@ parser = SafeConfigParser()
 try:
     parser.read('db_config.conf') #Defines Path
 except:
-    print "Coulnt open file db_config.conf. Probably wrong path."
+    print "Cannot open file \"db_config.conf\". Probably wrong path."
 
 ConfigDb.url = parser.get('DATABASE', 'url')
 ConfigDb.username = parser.get('DATABASE', 'username')
