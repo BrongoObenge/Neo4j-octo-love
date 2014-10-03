@@ -1,19 +1,18 @@
+#!/usr/bin/env python
 import sys
 from connection.ConfigDb import *
 
 
-ConfigDb();
+ConfigDb()
 db = connectDb()
 
 print "Database is connected : " + str(ConfigDb.isConnect)
 
-if  sys.argv[0] == "create":
+#takes commands from commandline
+if  sys.argv[1] == "create":
     createDatabase(db)
-if  sys.argv[0] == "delete":
-    sure = raw_input("You are about to DELETE the whole database\nAre you sure? y/n")
-    if sure == "y":
-        deleteWholeDatabase(db)
-    else: pass
+if  sys.argv[1] == "delete":
+    deleteWholeDatabase(db)
 
 
 

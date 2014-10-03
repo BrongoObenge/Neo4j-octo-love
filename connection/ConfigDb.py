@@ -17,8 +17,10 @@ class ConfigDb:
 
 #Get Data from db_config.conf
 parser = SafeConfigParser()
-#TODO add an exception
-parser.read('db_config.conf') #Defines Path
+try:
+    parser.read('db_config.conf') #Defines Path
+except:
+    print "Coulnt open file db_config.conf. Probably wrong path."
 
 ConfigDb.url = parser.get('DATABASE', 'url')
 ConfigDb.username = parser.get('DATABASE', 'username')
@@ -27,7 +29,6 @@ isRead = True
 
 def __init__(self):
        pass
-    
 
 def connectDb():
     graph_db = neo4j.GraphDatabaseService(ConfigDb.url)
@@ -38,7 +39,6 @@ def createDatabase(graph_db):
     importDatabaseNodes(graph_db)
     importDatabaseRelations(graph_db)
 
-
 def deleteWholeDatabase(graph_db):
        print "Preparing to delete database"
        graph_db.clear()
@@ -48,11 +48,9 @@ def deleteIndex(graph_db, nodeOrRelationship, nameOfIndex):
     result = False
     graph_db.delete_index(nodeOrRelationship, nameOfIndex)       
     result = True
-    
     return result   
        
 def importDatabaseNodes(graph_db):
-
     print "Opening file . . ."
     try:
         file = "create_db"
@@ -60,10 +58,8 @@ def importDatabaseNodes(graph_db):
     except:
         print "Error while loading file"
         return "Error!"
-    
     print "File " + dbFile.name + " opened! " + "\nin the mode : " + dbFile.mode
     print "Creating Nodes..."
-       
     for line in dbFile.readlines():
         graph_db.create(eval(line))
     print "Success creating nodes!"
