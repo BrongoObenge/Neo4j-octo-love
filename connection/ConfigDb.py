@@ -55,7 +55,7 @@ def deleteIndex(graph_db, nodeOrRelationship, nameOfIndex):
 def importDatabaseNodes(graph_db):
     print "Opening file . . ."
     try:
-        file = "../create_db"
+        file = "create_db"
         dbFile=open(file,'r')
     except:
         print "Error while loading file"

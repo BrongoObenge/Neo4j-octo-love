@@ -1,18 +1,18 @@
 import sys
-from connection.ConfigDb import ConfigDb
+from connection.ConfigDb import *
 
 
 ConfigDb();
-#db = connectDb()
+db = connectDb()
 
 print "Database is connected : " + str(ConfigDb.isConnect)
 
 if  sys.argv[1] == "create":
-    ConfigDb()#importDatabaseNodes(db)
+    importDatabaseNodes(db)
 
 
 if  sys.argv[1] == "delete":
-    ConfigDb()#deleteWholeDatabase(db)
+    deleteWholeDatabase(db)
 
 
 
