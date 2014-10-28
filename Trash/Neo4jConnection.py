@@ -10,8 +10,7 @@ from ConfigParser import SafeConfigParser
 class Neo4jConnection:
     isConnected = False
     
-    
-    
+
 def __init__(self):
     pass
     
@@ -19,7 +18,6 @@ def connectDatabase():
     url = getUrl()
     graph_db = neo4j.GraphDatabaseService(url)
     Neo4jConnection.isConnected = True
-    
     return graph_db 
 
 def getUrl():
@@ -29,22 +27,10 @@ def getUrl():
     url = parser.get('DATABASE', 'url')
     username = parser.get('DATABASE', 'username')
     password = parser.get('DATABASE', 'password')
-    
+
     return url, username, password
 
 def debug():
     pass
-
-
-
-
-
-
-
-
-
-
-
-
 
 

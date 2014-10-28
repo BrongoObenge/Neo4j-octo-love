@@ -61,7 +61,8 @@ def importDatabaseNodes(graph_db):
     print "File " + dbFile.name + " opened! " + "\nin the mode : " + dbFile.mode
     print "Creating Nodes..."
     for line in dbFile.readlines():
-        graph_db.create(eval(line))
+        a, = graph_db.create(eval(line))
+        a.add_labels("BASE")
     print "Success creating nodes!"
 
 def importDatabaseRelations(graph_db):
