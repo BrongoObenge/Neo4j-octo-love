@@ -79,3 +79,4 @@ def openQueryTransaction():
     session = cypher.Session(ConfigDb.url)
     tx = session.create_transaction()
     return tx
+
